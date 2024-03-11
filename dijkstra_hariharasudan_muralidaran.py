@@ -156,8 +156,10 @@ def dijkstra(map_image, start_x, start_y, goal_x, goal_y, width, height):
                 parents[neighbor_index] = current_node
                 # Add neighbor to open_list
                 open_list.append([neighbor_index, g_cost])
+
     if not path_found:
         return shortest_path,visual
+    
     # to find the shortest part
     if path_found:
         node = goal_index
@@ -199,7 +201,7 @@ def main():
         visualize_nodes(close,map_image)
         # Drawing the final path
         visualize_path(map_image, path)
-        # showing the result
+        # Showing the result
         cv2.imshow('Path on Map', map_image)
         video_out.release()
     
