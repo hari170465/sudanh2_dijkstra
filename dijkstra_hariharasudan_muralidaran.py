@@ -52,7 +52,7 @@ def create_map():
         [520, 175]
     ], np.int32)
     cv2.fillPoly(map_image, [hex_pt_2], (0, 0, 255))
-    
+
     return map_image
 
 
@@ -82,7 +82,7 @@ def visualize_path(map_image, path):
     for index in path:
         x = (index % 1200) 
         y = (index // 1200)
-        cv2.circle(map_image, (x, y), 2, (0, 255, 0), -1)  # Green color for path
+        cv2.circle(map_image, (x, y), 2, (0, 255, 0), -1)  # Green color for final path
         video_out.write(map_image)
         
 # Visualizing the nodes discovered
@@ -109,7 +109,7 @@ def dijkstra(map_image, start_x, start_y, goal_x, goal_y, width, height):
     open_list.append((start_index, 0))
     path_found = False
     shortest_path = []
-    visual=[]
+    visual=[]  # Used in the visualization of the visited nodes
 
     while open_list:
         open_list.sort(key=lambda x: x[1])
