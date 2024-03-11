@@ -41,7 +41,7 @@ def create_map():
         [515, 328.9],
         [515, 172]
     ], np.int32)
-    
+
     cv2.fillPoly(map_image, [hex_pt_1], (255, 0, 0))
     hex_pt_2 = np.array([
         [650, 100],
@@ -52,6 +52,7 @@ def create_map():
         [520, 175]
     ], np.int32)
     cv2.fillPoly(map_image, [hex_pt_2], (0, 0, 255))
+    
     return map_image
 
 
