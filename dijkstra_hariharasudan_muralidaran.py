@@ -33,46 +33,6 @@ def create_map():
                 cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
 
     # Obstacle 3 - hexagon (5mm clearance accounted for)
-    hex_pt_cl = np.array([
-        [650, 94],
-        [785, 172],
-        [785, 328.9],
-        [650, 405],
-        [515, 328.9],
-        [515, 172]
-    ], np.int32)
-    cv2.fillPoly(map_image, [hex_pt_cl], (255, 0, 0))
-def create_map():
-    map_image = np.zeros((500, 1200, 3), dtype=np.uint8)
-    for x in range (1200):
-        for y in range (500):
-        # First 2 obstacles in red
-            if(100 <= x <= 175 and 0 <= y <= 400):
-                cv2.circle(map_image, (x, y), 2, (0, 0, 255), -1)
-            elif(275 <= x <= 350 and 100 <= y <= 500):
-                cv2.circle(map_image, (x, y), 2, (0, 0, 255), -1)
-
-            # Stapler pin in red
-            elif(900 <= x <= 1100 and 50 <= y <= 130):
-                cv2.circle(map_image, (x, y), 2, (0, 0, 255), -1)
-            elif(1010 <= x <= 1100 and 130 <= y <= 370):
-                cv2.circle(map_image, (x, y), 2, (0, 0, 255), -1)
-            elif(900 <= x <= 1100 and 370 <= y <= 450):
-                cv2.circle(map_image, (x, y), 2, (0, 0, 255), -1)
-
-            # the obstacles in red
-            elif(95 <= x <= 180 and 0 <= y <= 405):
-                cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
-            elif(270 <= x <= 355 and 95 <= y <= 500):
-                cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
-            elif(895 <= x <= 1105 and 45 <= y <= 135):
-                cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
-            elif(1005 <= x <= 1105 and 130 <= y <= 370):
-                cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
-            elif(895 <= x <= 1105 and 365 <= y <= 455):
-                cv2.circle(map_image, (x, y), 2, (255, 0, 0), -1)
-
-    # Obstacle 3 - hexagon (5mm clearance accounted for)
     hex_pt_1 = np.array([
         [650, 94],
         [785, 172],
